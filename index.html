@@ -143,16 +143,36 @@
 				<div class="row">
 					<div class="section-header text-center">
 						<h2 class="section-title pb-4">Sobre Nós</h2>
-						<p>O GYMNARTE é um ginásio moderno e dinâmico, criado com o objetivo de promover saúde,
-							 bem-estar e o desenvolvimento físico dos seus membros. Situado em Avanca, o GYMNARTE 
-							 é parte integrante da Associação Artística de Avanca, uma instituição reconhecida pela 
-							 sua dedicação à cultura, à arte e ao crescimento pessoal e coletivo da comunidade.</br></br>
-							No GYMNARTE, acreditamos que a atividade física vai muito além da estética. 
-							Para nós, o desporto é uma ferramenta poderosa para melhorar a qualidade de vida, 
-							aumentar a autoconfiança e criar hábitos saudáveis que beneficiam o corpo e a mente. 
-							Assim, oferecemos uma vasta gama de modalidades e treinos, ajustados a todas as idades e níveis de experiência, 
-							desde musculação e cardio até aulas de grupo, como yoga, pilates e treino funcional.</p>
-					</div>
+					</div><div class="iconbox-wrapper d-flex pt-4 p-sm-3">
+						<div class="iconbox col-md-4 text-center bg-white p-40 mb-3">
+							<div class="iconbox-content">
+								<h3 class="colored">Nós</h3>
+								<p>O GYMNARTE é um ginásio moderno e dinâmico, criado com o objetivo de promover saúde,
+									bem-estar e o desenvolvimento físico dos seus membros. Situado em Avanca, o GYMNARTE 
+									é parte integrante da Associação Artística de Avanca, uma instituição reconhecida pela 
+									sua dedicação à cultura, à arte e ao crescimento pessoal e coletivo da comunidade.</p>
+							</div>
+						</div><!--iconbox-->
+
+						<div class="iconbox col-md-4 text-center bg-white p-40 mrl-3 mb-3">
+							<div class="iconbox-content">
+								<h3 class="colored">Ideais</h3>
+								<p>No GYMNARTE, acreditamos que a atividade física vai muito além da estética. 
+									Para nós, o desporto é uma ferramenta poderosa para melhorar a qualidade de vida, 
+									aumentar a autoconfiança e criar hábitos saudáveis que beneficiam o corpo e a mente. 
+									Assim, oferecemos uma vasta gama de modalidades e treinos, ajustados a todas as idades e níveis de experiência.</p>
+							</div>
+						</div><!--iconbox-->
+
+						<div class="iconbox col-md-4 text-center bg-white p-40 mb-3">
+							<div class="iconbox-content">
+								<h3 class="colored">A.A.A.</h3>
+								<p>Como parte da Associação Artística de Avanca, o GYMNARTE integra os valores de colaboração, 
+									criatividade e desenvolvimento individual e coletivo, proporcionando não só um espaço de treino, 
+									mas também um espaço de transformação pessoal.</p>
+							</div>
+						</div><!--iconbox-->
+					</div><!--iconbox-wrapper-->
 					<div class="iconbox-wrapper d-flex pt-4 p-sm-3">
 						<div class="iconbox col-md-4 text-center bg-white p-40 mb-3">
 							<div class="iconbox-icon mb-3">
@@ -254,6 +274,97 @@
 					</div>
 				</div><!--text-content-->
 			</div><!--workout-box-->
+		</section>
+
+		<section class="bmi-calculator padding-small">
+			<div class="section-header text-center p-30">
+				<h2 class="section-title pb-4">Calcula o teu IMC</h2>
+			</div>
+			<div class="container">
+				<div class="row">
+					<script>
+						// Função para calcular o IMC
+						function calcularIMC() {
+						  // Obtém os valores de altura e peso inseridos pelo utilizador
+						  var altura = document.getElementById('height').value;
+						  var peso = document.getElementById('Weight').value;
+						  
+						  // Verifica se os valores são válidos
+						  if (altura && peso) {
+							// Converte a altura de centímetros para metros
+							altura = altura / 100;
+							// Calcula o IMC
+							var imc = peso / (altura * altura);
+							imc = imc.toFixed(2); // Arredonda o resultado para 2 casas decimais
+						
+							// Exibe o resultado no campo "Resultado Aqui"
+							document.getElementById('Result').value = "O teu IMC é " + imc;
+						  } else {
+							// Exibe uma mensagem de erro se os campos não estiverem preenchidos corretamente
+							alert("Por favor, insira altura e peso válidos!");
+						  }
+						}
+					  
+						// Função para limpar os campos de entrada
+						function limparCampos() {
+							document.getElementById('height').value = "";
+							document.getElementById('Weight').value = "";
+						  	document.getElementById('Result').value = "";
+						}
+					  </script>
+					  
+					  <div class="calculator-wrap d-flex flex-wrap mb-4">
+						<select class="btn-box mr-2 mb-2">
+						  <option value="male">Homem</option>
+						  <option value="female">Mulher</option>
+						</select>
+						
+						<input type="text" id="height" placeholder="A tua altura em CM" class="btn-box mr-2 mb-2">
+						<input type="text" id="Weight" placeholder="O teu peso em KG" class="btn-box mr-2 mb-2">
+						
+						<!-- Botão Calcular -->
+						<div class="hvr-shutter-in-horizontal light text-center btn-box mr-2 mb-2">
+						  <a href="#" onClick="calcularIMC()">calcular</a>
+						</div>
+					  
+						<!-- Botão Limpar -->
+						<div class="hvr-shutter-in-horizontal light text-center btn-box mr-2 mb-2">
+						  <a href="#" onClick="limparCampos()">Limpar</a>
+						</div>
+					  
+						<!-- Campo para mostrar o resultado -->
+						<input type="text" id="Result" placeholder="Resultado Aqui" class="btn-box" readonly>
+					  </div><!-- calculator-wrap -->
+
+					<div class="bodymassindex text-center">
+						<h5>Index de Massa Corporal</h5>
+						<p>Compara o resultado obtido com esta tabela de referência para estimares a tua saude corporal!</p>
+						<table class="index">
+							<tr class="text-uppercase border-bottom">
+								<th>IMC</th>
+								<th>Classificação</th>
+							</tr>
+							<tr>
+								<td>18-25</td>
+								<td>Peso Normal</td>
+							</tr>
+							<tr>
+								<td>25-30</td>
+								<td>Acima do peso</td>
+							</tr>
+							<tr>
+								<td>30-40</td>
+								<td>Obesidade</td>
+							</tr>
+							<tr>
+								<td>40 ou mais</td>
+								<td>Obesidade Mórbida</td>
+							</tr>
+						</table>
+					</div><!--bodymassindex-->
+
+				</div>
+			</div>
 		</section>
 
 		<section class="our-achievements padding-medium">
@@ -471,96 +582,6 @@
 			</div><!--membership-wrapper-->
 		</section>
 
-		<section class="bmi-calculator padding-small">
-			<div class="section-header text-center p-30">
-				<h2 class="section-title pb-4">Calcula o teu IMC</h2>
-			</div>
-			<div class="container">
-				<div class="row">
-					<script>
-						// Função para calcular o IMC
-						function calcularIMC() {
-						  // Obtém os valores de altura e peso inseridos pelo utilizador
-						  var altura = document.getElementById('height').value;
-						  var peso = document.getElementById('Weight').value;
-						  
-						  // Verifica se os valores são válidos
-						  if (altura && peso) {
-							// Converte a altura de centímetros para metros
-							altura = altura / 100;
-							// Calcula o IMC
-							var imc = peso / (altura * altura);
-							imc = imc.toFixed(2); // Arredonda o resultado para 2 casas decimais
-						
-							// Exibe o resultado no campo "Resultado Aqui"
-							document.getElementById('Result').value = "O teu IMC é " + imc;
-						  } else {
-							// Exibe uma mensagem de erro se os campos não estiverem preenchidos corretamente
-							alert("Por favor, insira altura e peso válidos.");
-						  }
-						}
-					  
-						// Função para limpar os campos de entrada
-						function limparCampos() {
-							document.getElementById('height').value = "";
-							document.getElementById('Weight').value = "";
-						  	document.getElementById('Result').value = "";
-						}
-					  </script>
-					  
-					  <div class="calculator-wrap d-flex flex-wrap mb-4">
-						<select class="btn-box mr-2 mb-2">
-						  <option value="male">Homem</option>
-						  <option value="female">Mulher</option>
-						</select>
-						
-						<input type="text" id="height" placeholder="A tua altura em CM" class="btn-box mr-2 mb-2">
-						<input type="text" id="Weight" placeholder="O teu peso em KG" class="btn-box mr-2 mb-2">
-						
-						<!-- Botão Calcular -->
-						<div class="hvr-shutter-in-horizontal light text-center btn-box mr-2 mb-2">
-						  <a href="#" onClick="calcularIMC()">calcular</a>
-						</div>
-					  
-						<!-- Botão Limpar -->
-						<div class="hvr-shutter-in-horizontal light text-center btn-box mr-2 mb-2">
-						  <a href="#" onClick="limparCampos()">Limpar</a>
-						</div>
-					  
-						<!-- Campo para mostrar o resultado -->
-						<input type="text" id="Result" placeholder="Resultado Aqui" class="btn-box">
-					  </div><!-- calculator-wrap -->
-
-					<div class="bodymassindex text-center">
-						<h5>Index de Massa Corporal</h5>
-						<p>Compara o resultado obtido com esta tabela de referência para estimares a tua saude corporal!</p>
-						<table class="index">
-							<tr class="text-uppercase border-bottom">
-								<th>IMC</th>
-								<th>Classificação</th>
-							</tr>
-							<tr>
-								<td>18-25</td>
-								<td>Peso Normal</td>
-							</tr>
-							<tr>
-								<td>25-30</td>
-								<td>Acima do peso</td>
-							</tr>
-							<tr>
-								<td>30-40</td>
-								<td>Obesidade</td>
-							</tr>
-							<tr>
-								<td>40-above</td>
-								<td>Obesidade Mórbida</td>
-							</tr>
-						</table>
-					</div><!--bodymassindex-->
-
-				</div>
-			</div>
-		</section>
 
 		<section class="testimonials-wrap mt-3 mb-5">
 			<div class="section-header text-center p-30">
@@ -755,46 +776,20 @@
 						<div class="col-md-3 light mb-5">
 							<div class="row">
 								<img src="images/logo.png" class="mb-3">
-								<p>Fitphysical Pvt Ltd is for build and fitness body sed do eiusmod,adipisicing elit</p>
+								<p>GYMNARTE A.A.A.</p>
 								<div class="address">
 									<ul class="list-unstyled">
-										<li><i class="icon icon-map-marker colored"></i>Lincoln Park Chicago, Illinois
+										<li><i class="icon icon-map-marker colored"></i>Rua Associação Artistica de Avanca, Avanca
 										</li>
-										<li><i class="icon icon-phone colored"></i>(510) 710-3464 (510) 640-6326</li>
+										<li><i class="icon icon-phone colored"></i>+351 912 345 678</li>
 										<li><i class="icon icon-envelope colored"></i>
 											<div class="mail-address">
-												<a href="#" class="pr-10">hello@templatesjungle.com</a>
-												<a href="#">info@templatesjungle.com</a>
+												<a href="#" class="pr-10">gymnarte@gmail.com</a>
+												<a href="#"></a>
 											</div>
 										</li>
 									</ul>
 								</div>
-							</div>
-						</div>
-
-						<div class="col-md-3 recent-post mb-5">
-							<h4 class="widget-title mb-3">recent blog posts</h4>
-							<div class="widget-content">
-								<ul class="light">
-									<li class="border-bottom pb-10 mb-3">
-										<h5>
-											<a href="">How to Be Motivated For All Exercise</a>
-										</h5>
-										<span class="meta-date">September 21,2020</span>
-									</li>
-									<li class="border-bottom pb-10 mb-3">
-										<h5>
-											<a href="">How to Be Motivated For All Exercise</a>
-										</h5>
-										<span class="meta-date">September 21,2020</span>
-									</li>
-									<li>
-										<h5>
-											<a href="">How to Be Motivated For All Exercise</a>
-										</h5>
-										<span class="meta-date">September 21,2020</span>
-									</li>
-								</ul>
 							</div>
 						</div>
 
@@ -865,9 +860,9 @@
 						</div>
 						<div class="social-links mt-3">
 							<ul class="list-unstyled d-flex">
-								<li class="mr-3"><a href="#"><i class="icon icon-facebook m-1"></i></a></li>
-								<li class="mr-3"><a href="#"><i class="icon icon-twitter m-1"></i></a></li>
-								<li class="mr-3"><a href="#"><i class="icon icon-instagram m-1"></i></a></li>
+								<li class="mr-3"><a href="https://facebook.com/gymnarteaaa" target="_blank"><i class="icon icon-facebook m-1"></i></a></li>
+								<li class="mr-3"><a href="https://www.linkedin.com/in/daniel-sardo-34b6951a1/" target="_blank"><i class="icon icon-linkedin m-1"></i></a></li>
+								<li class="mr-3"><a href="https://instagram.com/gymnarte" target="_blank"><i class="icon icon-instagram m-1"></i></a></li>
 							</ul>
 						</div>
 					</div>
